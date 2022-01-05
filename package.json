@@ -1,0 +1,23 @@
+{
+  "name": "technicalchallenge_2ndblock",
+  "version": "1.0.0",
+  "description": "---\r Index",
+  "main": "index.js",
+  "dependencies": {
+    "eslint": "^8.6.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/getzemani18/technicalChallenge_2ndBlock.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/getzemani18/technicalChallenge_2ndBlock/issues"
+  },
+  "homepage": "https://github.com/getzemani18/technicalChallenge_2ndBlock#readme"
+}
