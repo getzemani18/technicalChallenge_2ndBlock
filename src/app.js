@@ -1,15 +1,26 @@
+import { addDoc, collection } from "firebase/firestore";
 const db = firebase.firestore()
 
+
+traerTasks()
 const taskForm = document.getElementById("task-form")
 
 const saveTask = (title, description, type, mes) => {
-     db.collection('tasks').doc().set({
+  try {
+  const docRef = await addDoc(collection(db, "task"), {
         title, 
         description, 
         type,
         mes
-    })
+    
+  });
+  console.log("Document written with ID: ", docRef.id);
+} catch (e) {
+  console.error("Error adding document: ", e);
 }
+}
+
+
 taskForm.addEventListener('submit', async (e) => {
     e.preventDefault()
     console.log(subir);
@@ -25,3 +36,9 @@ taskForm.addEventListener('submit', async (e) => {
     console.log(response);
     console.log(title, description, type, mes)
 })
+  
+const traerTasks = (formulario) => {
+    onSnapshot(collection(db, "task"), formulario)
+}
+
+
