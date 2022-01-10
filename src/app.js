@@ -1,6 +1,9 @@
-import { addDoc, collection } from "firebase/firestore";
-const db = firebase.firestore()
+// import * as module from "./firebase.js"
+import {db} from "./firebase.js"
+import { addDoc, collection } from "https://www.gstatic.com/firebasejs/9.6.2/firebase-firestore.js";
 
+console.log(db)
+const db = firebase.firestore()
 
 traerTasks()
 const taskForm = document.getElementById("task-form")
@@ -31,7 +34,7 @@ taskForm.addEventListener('submit', async (e) => {
     
     await saveTask(title, description, type, mes);
 
-    taskForm.reset()
+    
 
     console.log(response);
     console.log(title, description, type, mes)
