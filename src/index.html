@@ -13,6 +13,8 @@
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet" />
     <!-- MDB -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.10.1/mdb.min.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous" />
     <link rel="stylesheet" href="login.css">
 </head>
 
@@ -25,51 +27,117 @@
             <input type="password" placeholder="Contraseña" id="contra">
             <button type="button" aria-placeholder="Entrar" id="entrar"> Entrar</button>
         </div>
+        <footer class="bg text-center text-black">
+            <!-- Grid container -->
+            <div class="container p-4 pb-0">
+                <!-- Section: Social media -->
+                <section class="mb-4">
+
+
+                    <!-- Twitter -->
+                    <a class="btn btn-outline-light btn-floating m-1 text-black"
+                        href="https://twitter.com/jeongaetze?s=09" role="button"><i class="fab fa-twitter"></i></a>
+
+                    <!-- Google -->
+                    <a class="btn btn-outline-light btn-floating m-1 text-black" href="amandamuneca18@gmail.com"
+                        role="button"><i class="fab fa-google"></i></a>
+
+
+                    <!-- Linkedin -->
+                    <a class="btn btn-outline-light btn-floating m-1 text-black"
+                        href="https://www.linkedin.com/in/amanda-ramirez-864988218/" role="button"><i
+                            class="fab fa-linkedin-in"></i></a>
+
+                    <!-- Github -->
+                    <a class="btn btn-outline-light btn-floating m-1 text-black" href="https://github.com/getzemani18"
+                        role="button"><i class="fab fa-github"></i></a>
+                </section>
+                <!-- Section: Social media -->
+            </div>
+            <!-- Grid container -->
+
+            <!-- Copyright -->
+            <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+                © 2020 Copyright:
+                <a class="text-black">Amanda Getzemani</a>
+            </div>
+            <!-- Copyright -->
+        </footer>
     </section>
 
     <section id="pantalla2-notes">
-        <h1>j</h1>
+        <form id="task-form" class="form">
+            <div id="nota">
+                <label for="titulo"></label>
+                <input type="text" name="titulo" id="task-title" placeholder="Escribe un TITÚLO">
+            </div>
+           
+            <div id="description">
+                <label for="descripcion"></label>
+                <input type="text" name="descripcion" id="task-description" placeholder="Descripción">
+            </div>
+            <div id="type">
+                <label for="type"></label>
+                <select id="type">
+                    <option value="personal">Personal</option>
+                    <option value="professional">professional</option>
+                    <option value="relaciones">Relaciones</option>
+                    <option value="familia">Familia</option>
+                    <option value="salud">Salud</option>
+                    <option value="aprendizaje">Aprendizaje</option>
+                </select>
+            </div>
+            <div id="mes">
+                <label for="mes"></label>
+                <select name="mes" id="mes">
+                    <option value="Enero">Enero</option>
+                    <option value="Febrero">Febrero</option>
+                    <option value="Marzo">Marzo</option>
+                    <option value="Abril">Abril</option>
+                    <option value="Mayo">Mayo</option>
+                    <option value="Junio">Junio</option>
+                    <option value="Julio">Julio</option>
+                    <option value="Agosto">Agosto</option>
+                    <option value="Septiembre">Septiembre</option>
+                    <option value="Octubre">Octubre</option>
+                    <option value="Noviembre">Noviembre</option>
+                    <option value="Diciembre">Diciembre</option>
+                </select>
+            </div>
+            <button type="button" class="btn btn-primary" id="guardar">Guardar
+            </button>
+        </form>
     </section>
 
 
 
-    <footer class="bg text-center text-white">
-        <!-- Grid container -->
-        <div class="container p-4 pb-0">
-            <!-- Section: Social media -->
-            <section class="mb-4">
+    <script type="module">
+        // Import the functions you need from the SDKs you need
+        
+        // TODO: Add SDKs for Firebase products that you want to use
+        // https://firebase.google.com/docs/web/setup#available-libraries
+     import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.2/firebase-app.js";
+     import { getFirestore } from "https://www.gstatic.com/firebasejs/9.6.2/firebase-firestore.js";
+    
+        // Your web app's Firebase configuration
+        const firebaseConfig = {
+            apiKey: "AIzaSyBIe-vn4Lvj6Ik1C3SYhL7CGhF3W6hqTSI",
+            authDomain: "tecnologichallenge.firebaseapp.com",
+            projectId: "tecnologichallenge",
+            storageBucket: "tecnologichallenge.appspot.com",
+            messagingSenderId: "156053888333",
+            appId: "1:156053888333:web:676165c8dba1f1c8296b04"
+        };
 
-
-                <!-- Twitter -->
-                <a class="btn btn-outline-light btn-floating m-1" href="https://twitter.com/jeongaetze?s=09"
-                    role="button"><i class="fab fa-twitter"></i></a>
-
-                <!-- Google -->
-                <a class="btn btn-outline-light btn-floating m-1" href="amandamuneca18@gmail.com" role="button"><i
-                        class="fab fa-google"></i></a>
-
-
-                <!-- Linkedin -->
-                <a class="btn btn-outline-light btn-floating m-1"
-                    href="https://www.linkedin.com/in/amanda-ramirez-864988218/" role="button"><i
-                        class="fab fa-linkedin-in"></i></a>
-
-                <!-- Github -->
-                <a class="btn btn-outline-light btn-floating m-1" href="https://github.com/getzemani18" role="button"><i
-                        class="fab fa-github"></i></a>
-            </section>
-            <!-- Section: Social media -->
-        </div>
-        <!-- Grid container -->
-
-        <!-- Copyright -->
-        <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
-            © 2020 Copyright:
-            <a class="text-white">Amanda Getzemani</a>
-        </div>
-        <!-- Copyright -->
-    </footer>
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+         const db = getFirestore();
+    </script>
+    <script src="app.js"></script>
+    <script src="firebase.js"></script>
     <script src="data.js"></script>
+   
+
 </body>
 
 </html>
