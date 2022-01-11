@@ -18,7 +18,7 @@ const traerMes = () => {
 
         // Iterar DIas
         for (const dias of arrayMes[0].Meses) {
-            console.log(dias);
+            // console.log(dias);
             let mesesImp = document.getElementById("mes")
              mesesImp.innerHTML += `<option>${dias.Mes}</option>`
              
