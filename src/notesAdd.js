@@ -2,32 +2,49 @@ const agregar = "../data/moths.json"
 console.log(agregar)
 
 let arrayMes = [];
-let arrayDia = [];
 
 const traerMes = () => {
     fetch(agregar)
-    .then((response) => response.json(response))
+    .then((response) => response.json())
     .then((data) => {
         arrayMes.push(data)
-        iterarMes(arrayMes[0].Meses)
-    })
-}
+        
+        // Iterar Meses
+        // for (const months in arrayMes[0]["Meses"]) {
+        //    console.log(months);
+        //    let mesesImp = document.getElementById("mes")
+        //    mesesImp.innerHTML += `<option></option>`
+        // }
 
-// Iterando
-const iterarMes = (arraydeMes) => {
-    for( const [index, mes] of arraydeMes.entries()){
-        let meses = document.getElementById("mes")
-        meses.innerHTML += `<option onclick = "slectmes('${index}')">${mes.Mes}</option>`
-        // console.log(meses)
-    }
-}
+        // Iterar DIas
+        for (const dias of arrayMes[0].Meses) {
+            console.log(dias);
+            let mesesImp = document.getElementById("mes")
+             mesesImp.innerHTML += `<option>${dias.Mes}</option>`
+             
+        }
 
-const iterarDia = (index) => {
-    for (const dia of arrayMes[0].Meses[index].Dia) {
-        let dias = document.getElementById("dia")
-        dias.innerHTML += `<option>${dia}</option>`
-    }
+})
 }
-
 
 traerMes()
+// Iterando
+// const iterarMes = (arraydeMes) => {
+//     for( const [index, mes] of arraydeMes.entries()){
+//         let meses = document.getElementById("mes")
+//         meses.innerHTML += `<option onclick = "slectmes('${index}')">${mes.Mes}</option>`
+//         // console.log(meses)
+//     }
+// }
+
+// const iterarDia = (index) => {
+//     for (const dia of Meses[0].Dia) {
+//         console.log(Meses[0].Dia);
+//         let dias = document.getElementById("dia")
+//         dias.innerHTML += `<option>${dia}</option>`
+//         console.log(dias);
+//     }
+// }
+
+
+
