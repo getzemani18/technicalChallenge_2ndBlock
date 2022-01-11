@@ -1,10 +1,8 @@
 // Import the functions you need from the SDKs you need
-        
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.2/firebase-app.js";
         // TODO: Add SDKs for Firebase products that you want to use
         // https://firebase.google.com/docs/web/setup#available-libraries
-     import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.2/firebase-app.js";
-     import { getFirestore } from "https://www.gstatic.com/firebasejs/9.6.2/firebase-firestore.js";
-    
+
         // Your web app's Firebase configuration
         const firebaseConfig = {
             apiKey: "AIzaSyBIe-vn4Lvj6Ik1C3SYhL7CGhF3W6hqTSI",
@@ -17,6 +15,37 @@
 
         // Initialize Firebase
         const app = initializeApp(firebaseConfig);
-         export const db = getFirestore(app);
 
-        console.log(app, db);
+        import {
+            getFirestore, collection, addDoc
+        }
+        from "https://www.gstatic.com/firebasejs/9.6.2/firebase-firestore.js";
+
+        const db = getFirestore()
+
+        // Referencias
+        // let title = document.getElementById("task-title")
+        // let description = document.getElementById("task-description")
+        // let type = document.getElementById("type")
+        // let month = document.getElementById("mes")
+        // let dia = document.getElementById("dia")
+
+        let saveBtn = document.getElementById("guardar")
+
+        // Agregar documentos
+        const  addDocument = async () => {
+           try {
+            const docRef = await addDoc(collection(db, "users"), {
+                Title:  document.getElementById("task-title").value,
+                DEscr: document.getElementById("task-description").value,
+                Tipo: document.getElementById("type").value,
+                Mes: document.getElementById("mes").value
+            });
+            console.log("Document written with ID: ", docRef.id);
+            } catch (e) {
+            console.error("Error adding document: ", e);
+            }
+        };
+
+        // Asigando eventos
+        saveBtn.addEventListener("click", addDocument)

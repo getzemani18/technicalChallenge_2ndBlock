@@ -76,7 +76,7 @@
                 <label for="descripcion"></label>
                 <input type="text" name="descripcion" id="task-description" placeholder="Descripción">
             </div>
-            <div id="type">
+            <div id="type1">
                 <label for="type"></label>
                 <select id="type">
                     <option value="personal">Personal</option>
@@ -87,21 +87,14 @@
                     <option value="aprendizaje">Aprendizaje</option>
                 </select>
             </div>
-            <div id="mes">
+            <div id="mes1">
                 <label for="mes"></label>
                 <select name="mes" id="mes">
-                    <option value="Enero">Enero</option>
-                    <option value="Febrero">Febrero</option>
-                    <option value="Marzo">Marzo</option>
-                    <option value="Abril">Abril</option>
-                    <option value="Mayo">Mayo</option>
-                    <option value="Junio">Junio</option>
-                    <option value="Julio">Julio</option>
-                    <option value="Agosto">Agosto</option>
-                    <option value="Septiembre">Septiembre</option>
-                    <option value="Octubre">Octubre</option>
-                    <option value="Noviembre">Noviembre</option>
-                    <option value="Diciembre">Diciembre</option>
+                </select>
+            </div>
+            <div id="dia1">
+                <label for="dia"></label>
+                <select name="dia" id="diass">
                 </select>
             </div>
             <button type="button" class="btn btn-primary" id="guardar">Guardar
@@ -110,12 +103,14 @@
     </section>
 
 
-
+    
 
     
-    <script src="index.js" type="module"></script>
+    <script src="firebase.js" type="module"></script>
     <script src="data.js"></script>
+    <script src="notesAdd.js"></script>
 
+      
 </body>
 
 </html>
