@@ -87,6 +87,45 @@
   border-radius: 10px black;
 
 }
+
+/* Pantalla 3 Ver Notas */
+#pantalla3-verNotas {
+  margin: 0;
+  padding: 0;
+  background: url(../assets/btslogo.png) no-repeat center center;
+  background-size: cover;
+  max-width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* Crrousel */
+.carousel-item{
+  height: 30rem;
+  background: rgb(177, 160, 199);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /* FOOTER */
 footer {
   position: absolute;
