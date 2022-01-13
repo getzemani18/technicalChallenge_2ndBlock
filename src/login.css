@@ -100,10 +100,13 @@
 }
 
 /* Crrousel */
-.carousel-item{
-  height: 30rem;
-  background: rgb(177, 160, 199);
+.row {
+display:inline-table;
+padding: 1rem;
+
+
 }
+
 
 
 

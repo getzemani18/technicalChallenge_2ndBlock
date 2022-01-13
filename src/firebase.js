@@ -70,41 +70,17 @@
 
 
                 carrousel.innerHTML += 
-                `<div class="card">
-                <div class="card-header">
-                    <h4>Notes</h4>
-                </div>
-                <div class="card-body">
-                    <div id="${doc.id}" class="carousel slide" data-bs-ride="carousel">
-                        <div class="carousel-indicators">
-                            <button type="button" data-bs-target="#${doc.id}" data-bs-slide-to="0"
-                                class="active"></button>
-                            <button type="button" data-bs-target="#${doc.id}" data-bs-slide-to="0"
-                                class="active"></button>
-                        </div>
-                        <div class="carousel-inner">
-                            <div class="carousel-item active">
-                                <h1>${doc.data().Title}</h1>
-                                <h2>${doc.data().DEscr}</h2>
-                                <h2>${doc.data().Tipo}</h2>
-                                <h2>${doc.data().Mes}</h2>
-                                <h1>${doc.data().date.toDate()}</h1>
-                            </div>
-                        
-                        </div>
-                        <button class="carousel-control-prev" type="button" data-bs-target="#${doc.id}"
-                            data-bs-slide="prev">
-                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-
-                        </button>
-                        <button class="carousel-control-next" type="button" data-bs-target="#${doc.id}"
-                            data-bs-slide="next">
-                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-
-                        </button>
+                `<div class="row">
+                <div class="card border-success mb-3" style="max-width: 18rem;" style="display: block">
+                    <div class="card-header bg-transparent border-success">${doc.data().Title}</div>
+                    <div class="card-body text-success">
+                        <h5 class="card-title">${doc.data().Tipo}</h5>
+                        <h5 class="card-title">${doc.data().Mes}</h5>
+                        <p class="card-text">${doc.data().DEscr}</p>
                     </div>
+                    <div class="card-footer bg-transparent border-success">${doc.data().date.toDate()}</div>
                 </div>
-            </div>
+                </div>
                 `
 
             })

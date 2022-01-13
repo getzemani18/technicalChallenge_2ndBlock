@@ -1,6 +1,6 @@
 
 document.getElementById("pantalla2-notes").hidden = true;
-document.getElementById("pantalla3-verNotas").hidden= false;
+document.getElementById("pantalla3-verNotas").hidden= true;
 
 const bEntrar = document.getElementById("entrar")
 bEntrar.addEventListener("click", () => {
