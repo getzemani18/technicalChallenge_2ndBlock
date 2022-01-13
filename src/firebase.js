@@ -62,7 +62,7 @@
 
        
         // Asigando eventos
-        saveBtn.addEventListener("click", addDocument)
+        saveBtn.addEventListener("click",  addDocument)
 
 
         // dinamicamente las cards deñ formulario

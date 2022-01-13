@@ -25,6 +25,7 @@ verBtn.addEventListener("click", () => {
 })
 
 
+
 // Pantalla para regresar al login
 const salirBtn = document.getElementById("salir")
 salirBtn.addEventListener("click", () => {
