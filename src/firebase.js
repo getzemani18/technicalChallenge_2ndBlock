@@ -80,7 +80,6 @@
                     </div>
                     <div class="card-footer bg-transparent border-success">${doc.data().date.toDate()}</div>
                 </div>
-                </div>
                 `
 
             })
