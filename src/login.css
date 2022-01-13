@@ -61,7 +61,10 @@
 
 /* PANTALLA 2 */
 #pantalla2-notes{
+  margin: 0;
+  padding: 0;
   background: url(../assets/but.jpeg) no-repeat center;
+  background-size: cover;
   background-size:100vh;
   background-color: #ffd700;
   width: 100%;
@@ -98,10 +101,13 @@
 }
 
 /* Pantalla 3 Ver Notas */
+body {
+  background-color: black;
+}
 #pantalla3-verNotas {
   margin: 0;
   padding: 0;
-  background: url(../assets/btslogo.png) no-repeat center center;
+  background: url(../assets/btslogo.png) center center;
   background-size: cover;
   max-width: 100%;
   height: 100vh;
