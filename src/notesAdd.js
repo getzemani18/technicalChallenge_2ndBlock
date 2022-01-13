@@ -1,9 +1,12 @@
+// Ponemos el JSON
 const agregar = "../data/moths.json"
 console.log(agregar)
 
+
+// Arreglo Vacio
 let arrayMes = [];
 
-
+// Fetch para empezar a iterar
 const traerMes = () => {
     fetch(agregar)
     .then((response) => response.json())

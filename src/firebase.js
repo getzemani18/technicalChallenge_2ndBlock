@@ -1,3 +1,5 @@
+// ----------------------------IMPOTS FIREBASE-----------------
+
 // Import the functions you need from the SDKs you need
         import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.2/firebase-app.js";
         // TODO: Add SDKs for Firebase products that you want to use
@@ -16,18 +18,24 @@
         // Initialize Firebase
         const app = initializeApp(firebaseConfig);
 
+        // -------------IMPORTS PARA FIRESTORE
         import {
             getFirestore, collection, addDoc, doc, getDocs
         }
         from "https://www.gstatic.com/firebasejs/9.6.2/firebase-firestore.js";
 
+        // inicializamos firestore
+
         const db = getFirestore()
 
+        // Variables para el dia
         let today = new Date()
         let todayString = today.toDateString()
     
         console.log(today);
         console.log(todayString);
+
+
 
         // Referencias
     
@@ -57,6 +65,7 @@
         saveBtn.addEventListener("click", addDocument)
 
 
+        // dinamicamente las cards deñ formulario
         let carrousel = document.getElementById("carrousel")
         const getAllData = async () => {
             const querySnapshot = await getDocs(collection(db, "users"))
@@ -85,12 +94,7 @@
             })
         }
        getAllData()
-        // .forEach((doc) => {
-           
-        
-
-
-        // dINAMICO
+       
        
         
 
