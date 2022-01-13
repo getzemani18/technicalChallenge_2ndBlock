@@ -19,3 +19,10 @@ verBtn.addEventListener("click", () => {
     document.getElementById("pantalla2-notes").hidden= true
     document.getElementById("pantalla3-verNotas").hidden= false
 })
+
+const salirBtn = document.getElementById("salir")
+salirBtn.addEventListener("click", () => {
+    document.getElementById("pantalla1-login").hidden= false;
+     document.getElementById("pantalla3-verNotas").hidden= true
+
+})

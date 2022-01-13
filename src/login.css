@@ -103,10 +103,11 @@
 .row {
 display:inline-table;
 padding: 1rem;
-
-
 }
-
+#salir {
+  background-color: pink;
+  color: black;
+}
 
 
 
