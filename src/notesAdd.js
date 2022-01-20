@@ -7,10 +7,13 @@ console.log(agregar)
 let arrayMes = [];
 
 // Fetch para empezar a iterar
+// promesa 
 const traerMes = () => {
     fetch(agregar)
     .then((response) => response.json())
     .then((data) => {
+        //Metodo push: Se utiliza para arreglos
+        //Añade cualquer cosa que tu le pongas al arreglo
         arrayMes.push(data)
         iterarMeses(arrayMes[0].Meses)
        
@@ -21,8 +24,12 @@ const traerMes = () => {
 
 // Iterando
 const iterarMeses = (arrayMes) => {
+    // Utilizamos un forof para iterar el Json 
+    // Utilizamos dos key para cada elemento iterador
+    // Utilizamos el metdo entries que va a devolver un objeto iterador, que son las keys
     for( const [index, mes] of arrayMes.entries()){
         console.log(mes.DM);
+        // Pintamos cada mes con su dia 
         let meses = document.getElementById("mes")
         meses.innerHTML += `
         <option>${mes.L}</option>
