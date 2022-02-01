@@ -69,17 +69,24 @@
            
         };
  
-        // let btnsED = () => {
-        //      const btnDelete = document.querySelectorAll(".delete")
-        //      console.log(btnDelete);
-        //     btnDelete.forEach((btn) => {
-        //         btn.addEventListener('click', async (e) =>{
-        //             await deleteDoc(doc(db, "users", e.target.dataset.id));
-        //             console.log(target.dataset.id);
-        //         })
-        //     })
-        // }
-        // btnsED()
+          // ¿Qué espero de la funcion Deleate?
+          // Espero que pueda borrar cada card al presionar el boton "Eliminar"
+          //Pseudocodigo
+          //Hacer una funcion con el id del boton 
+          let deleate = document.querySelectorAll('.delete') // se utiliza el querySelector por que solamente hay un elmento al que queremos utilizar
+          console.log(deleate) //null
+          const deleateF = () => {
+              
+              deleate.addEventListener("click", async (id) => {
+                  await deleteDoc(doc(db, "users", id))
+              })
+          }
+          deleateF()
+          // agregar el addEvenListener para que al presionarlo comience
+          // Dentro de esta, dar la orden de borrar 
+          // Poner el codigo de borrar de FireBase 
+          // Y ahi mismo dar la orden de borrar con el boton 
+
 
         
         
@@ -87,6 +94,7 @@
        
         // Asigando eventos
         // Prendemos el boton de guardar con la funcion donde iran integrando los datos 
+        
         saveBtn.addEventListener("click",  addDocument)
         
 
@@ -114,7 +122,7 @@
                         <p class="card-text">${doc.data().DEscr}</p>
                     </div>
                     <div class="card-footer bg-transparent border-success">${doc.data().date.toDate()}</div>
-                    <button type="button" class="delete" data-id="${doc.id}">Eliminar</button>
+                    <button type="button" class="delete" data-id="${doc.id}" >Eliminar</button>
                     <button type="button" class="edit" data-id="${doc.id}">Editar</button>
                 </div>
                 `
