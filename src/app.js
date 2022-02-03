@@ -1,9 +1,10 @@
 // Empezamos a importar, utilozando exports desde firebasej,js
-import {saveTask, getTasks, onGetTasks, deleteTask, getTask} from "./firabase1.js"
+import {saveTask, getTasks, onGetTasks, deleteTask, getTask, updateTask} from "./firabase1.js"
 
 
 let taskCards = document.getElementById("cards") //Afregamos el id de la seccion donde se van a pintar
 let editStatus = false
+let id = ''
 
 // Arrancando la aplicacion con el evento Window
 // Agregamos un evento el cual nos va a servir ejecutar cuando la aplicacion carge
@@ -41,8 +42,8 @@ window.addEventListener('DOMContentLoaded', async () => {
          btndDelete.forEach(btn => {
            //Importamos dentro del event el target que esta dentro del objeto 
              btn.addEventListener('click', ({target:{dataset}}) => {
-               console.log('elimienando');
-               console.log(dataset.id);
+              //  console.log('elimienando');
+              //  console.log(dataset.id);
                //Prendemos la funcion desde firebase  y nos traemos el id de cada boton
               deleteTask(dataset.id)
              })
@@ -50,21 +51,33 @@ window.addEventListener('DOMContentLoaded', async () => {
 
          //---------Editar datos
          const btnEdit = taskCards.querySelectorAll('.edit')
+         //console.log(btnEdit);
          btnEdit.forEach((btn) => {
-           btn.addEventListener('click', async (e) => {
-            console.log(e);
-            console.log('editando');
+           //console.log(btn);
+           btn.addEventListener('click',  (e) =>{ 
+             
+              document.getElementById("pantalla2-notes").hidden= false
+              document.getElementById("pantalla3-verNotas").hidden= true
+            //console.log(e.target.dataset.id);
+            //console.log('editando');
             //Utilizamos el id para poder obtener la tarea
-            const doc = await getTask(e.target.dataset.id)
-            const task1 = doc.data()
+            let doc =  getTask(e.target.dataset.id)
+            console.log(doc); 
+            //Utilizamos el data para que me de los data de cada tarea al que hay que modificar
+            // let task1 = doc.data()
+            
+            // console.log(task1);
             
 
-            taskForm['task-title'].value = task1.title
-            taskForm['task-description'].value = task1.description
-            taskForm['type'].value = task1.type
-            taskForm['mes'].value = task1.month
+            taskForm['task-title'].value = doc.title
+            taskForm['task-description'].value = doc.description
+            taskForm['type'].value = doc.type
+            taskForm['mes'].value = doc.month
 
             editStatus = true
+            id = e.target.dataset.id
+
+            taskForm['guardar'].innerText = 'Update'
            })
          })
    })
@@ -74,20 +87,27 @@ window.addEventListener('DOMContentLoaded', async () => {
 const taskForm = document.getElementById('task-form')
 
 taskForm.addEventListener('click', (e) => {
-  console.log('di click')
-  console.log(e);
+  // console.log('di click')
+  // console.log(e);
   e.preventDefault()
        const title =  taskForm['task-title'] 
        const description = taskForm['task-description'] 
       const type= taskForm['type'] 
       const month = taskForm['mes'] 
-      console.log(title);
+      //console.log(title);
       
       //Afregamos una condicional 
-      if(editStatus) {
-        console.log('Actualisa');
-      } else {
+      //Que si esta en true podemos actualizar algo
+      if(!editStatus) { //si no esta editando 
         saveTask(title.value, description.value, type.value, month.value)
+      } else {
+        updateTask( id, {
+          title: title.value, 
+          description: description.value, 
+          type: type.value, 
+          month:  month.value})
+
+        editStatus = false
       }
         //console.log(title.value, description.value, type.value, month.value); 
 

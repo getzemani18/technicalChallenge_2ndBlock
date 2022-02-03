@@ -1,7 +1,7 @@
 
   // Import the functions you need from the SDKs you need
   import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.2/firebase-app.js";
-  import {getFirestore,collection, addDoc,getDocs,onSnapshot, deleteDoc, doc, getDoc} from "https://www.gstatic.com/firebasejs/9.6.2/firebase-firestore.js"
+  import {getFirestore,collection, addDoc,getDocs,onSnapshot, deleteDoc, doc, getDoc, updateDoc} from "https://www.gstatic.com/firebasejs/9.6.2/firebase-firestore.js"
   // TODO: Add SDKs for Firebase products that you want to use
   // https://firebase.google.com/docs/web/setup#available-libraries
 
@@ -22,8 +22,8 @@
         // Empezamos a ejecutar el Firestore
         const db = getFirestore()
 
-        console.log(db);
-       console.log(addDoc);
+    //     console.log(db);
+    //    console.log(addDoc);
 
         // Creamos una contstante
         // Espero que de esta constante me pueda pasar el titulo, la descripcion, el tipo y el mes
@@ -63,6 +63,16 @@
         }
 
         //obtener una sola tarea
-        export const getTask = (id) => {
-           getDoc(doc(db, 'task', id))
+        export const getTask = async (id) => {
+            //alert(id,'llego')
+            const docRef = doc(db, 'task', id)
+            const docSnap = await getDoc(docRef)
+            //console.log(docSnap.data());  
+            const datosD =  docSnap.data()    
+            console.log(datosD);
+        }
+
+        //Actualizar 
+        export const  updateTask = (id, newCard) => {
+             updateDoc(doc(db, 'task', id), newCard)
         }

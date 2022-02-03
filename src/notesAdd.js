@@ -1,6 +1,6 @@
 // Ponemos el JSON
 const agregar = "../data/moths.json"
-console.log(agregar)
+//console.log(agregar)
 
 
 // Arreglo Vacio
@@ -28,7 +28,7 @@ const iterarMeses = (arrayMes) => {
     // Utilizamos dos key para cada elemento iterador
     // Utilizamos el metdo entries que va a devolver un objeto iterador, que son las keys
     for( const [index, mes] of arrayMes.entries()){
-        console.log(mes.DM);
+        //console.log(mes.DM);
         // Pintamos cada mes con su dia 
         let meses = document.getElementById("mes")
         meses.innerHTML += `
